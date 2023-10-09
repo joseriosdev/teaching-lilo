@@ -27,15 +27,15 @@ namespace lilo.Controllers
         [HttpGet("{id}")]
         public IActionResult GetVideogameById(int id)
         {
-            Videogame? vgToReturn = null;
-            foreach (Videogame v in FakieDB.videogames)
-            {
-                if (v.Id == id)
-                {
-                    vgToReturn = v;
-                    break;
-                }
-            }
+            Videogame? vgToReturn = FakieDB.videogames.FirstOrDefault(v => v.Id == id);
+            //foreach (Videogame v in FakieDB.videogames)
+            //{
+            //    if (v.Id == id)
+            //    {
+            //        vgToReturn = v;
+            //        break;
+            //    }
+            //}
             if(vgToReturn is null)
                 return NotFound(new CustomError()
                 { StatusCode = "404",
@@ -43,5 +43,8 @@ namespace lilo.Controllers
 
             return Ok(vgToReturn);
         }
+
+        [HttpGet]
+        public IActionResult GetAllVideogames() => Ok(FakieDB.videogames);
     }
 }

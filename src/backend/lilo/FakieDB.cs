@@ -1,4 +1,6 @@
-﻿namespace lilo
+﻿using lilo.Models;
+
+namespace lilo
 {
     public class FakieDB
     {
