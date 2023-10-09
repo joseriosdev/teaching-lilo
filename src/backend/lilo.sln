@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.33627.172
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "lilo", "lilo\lilo.csproj", "{7E818F7A-C026-401C-941E-068298FB71A6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "lilo", "lilo\lilo.csproj", "{7E818F7A-C026-401C-941E-068298FB71A6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestProject1", "tests\TestProject1\TestProject1.csproj", "{98831067-3E71-4339-8FB8-E190B0AB4841}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{7E818F7A-C026-401C-941E-068298FB71A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7E818F7A-C026-401C-941E-068298FB71A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7E818F7A-C026-401C-941E-068298FB71A6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{98831067-3E71-4339-8FB8-E190B0AB4841}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{98831067-3E71-4339-8FB8-E190B0AB4841}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{98831067-3E71-4339-8FB8-E190B0AB4841}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{98831067-3E71-4339-8FB8-E190B0AB4841}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

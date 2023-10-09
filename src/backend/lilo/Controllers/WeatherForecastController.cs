@@ -1,3 +1,4 @@
+using lilo.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace lilo.Controllers

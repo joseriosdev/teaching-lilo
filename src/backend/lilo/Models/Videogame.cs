@@ -1,4 +1,4 @@
-﻿namespace lilo
+﻿namespace lilo.Models
 {
     public class Videogame
     {

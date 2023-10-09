@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using lilo.Models;
+using lilo.Models.Errors;
+using Microsoft.AspNetCore.Mvc;
 
 namespace lilo.Controllers
 {
@@ -35,7 +37,9 @@ namespace lilo.Controllers
                 }
             }
             if(vgToReturn is null)
-                return NotFound("Videogame not found :(");
+                return NotFound(new CustomError()
+                { StatusCode = "404",
+                 Message = "Videogame not found :(" });
 
             return Ok(vgToReturn);
         }
