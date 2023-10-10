@@ -38,13 +38,35 @@ namespace lilo.Controllers
             //}
             if(vgToReturn is null)
                 return NotFound(new CustomError()
-                { StatusCode = "404",
-                 Message = "Videogame not found :(" });
+                { 
+                    StatusCode = "404",
+                    Message = "Videogame not found :("
+                });
 
             return Ok(vgToReturn);
         }
 
         [HttpGet]
         public IActionResult GetAllVideogames() => Ok(FakieDB.videogames);
+
+        [HttpPost]
+        public IActionResult PostSingleVideogame([FromQuery] string name)
+        {
+            if(name is not null)
+            {
+                Videogame vgToInsert = new Videogame()
+                {
+                    Name = name,
+                    Id = FakieDB.videogames.Count() + 1
+                };
+
+                FakieDB.videogames.Add(vgToInsert);
+                return Ok(vgToInsert);
+            }
+            else
+            {
+                return BadRequest();
+            }
+        }
     }
 }
