@@ -22,13 +22,15 @@ const getAllVideogamesAsync = async (event) => {
     resultElement.innerHTML = output;
 }
 
-function alertMessage(message, bgClassNameColor) {
-    this.messageDisplayer.classList.add(bgClassNameColor);
-    this.messageDisplayer.innerHTML = message;
+function alertMessage(message, classesToAdd) {
+    const messageDisplayer = document.getElementById('notifier');
+
+    classesToAdd.forEach(cssClass => messageDisplayer.classList.add(cssClass));
+    messageDisplayer.innerText = message;
 
     setTimeout(() => {
-      this.messageDisplayer.classList.remove(bgClassNameColor);
-      this.messageDisplayer.innerHTML = '';
+        classesToAdd.forEach(cssClass => messageDisplayer.classList.remove(cssClass));
+        messageDisplayer.innerText = '';
     }, 4000)
 }
 
@@ -42,11 +44,15 @@ form.addEventListener('submit', async function(e) {
     const videogameToCreate = document.getElementById('vg-name-input').value;
     document.getElementById('vg-name-input').value = '';
     
-    const result = await fetch(`${baseURL}Videogames/?name=${videogameToCreate}`, {
-        method: 'POST'
-    });
+    const result = await fetch(
+        `${baseURL}Videogames/?name=${videogameToCreate}`,
+        { method: 'POST' }
+    );
     const data = await result.json();
-    console.log(data);
+    alertMessage(
+        `The Videogame ${data.name} was created with id ${data.id}`,
+        ['alert','green-alert']
+    );
 });
 
 

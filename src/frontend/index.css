@@ -8,6 +8,21 @@
     box-sizing: border-box;
 }
 
+.alert {
+    text-transform: bold;
+    text-align: center;
+    display: block;
+    z-index: 10;
+    border-radius: 20px;
+    padding: .5rem;
+} .red-alert {
+    background-color: firebrick;
+    color: whitesmoke;
+} .green-alert {
+    background-color: green;
+    color: white;
+}
+
 body {
     background-color: lightgray;
     font-family: sans-serif;
